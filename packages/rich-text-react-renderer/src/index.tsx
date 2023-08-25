@@ -52,7 +52,7 @@ function defaultInline(type: string, node: Inline): ReactNode {
 export type CommonNode = Text | Block | Inline;
 
 export interface NodeRenderer {
-  (node: Block | Inline, children: ReactNode): ReactNode;
+  (node: Block | Inline, children: ReactNode): ReactNode | Promise<any>;
 }
 
 export interface RenderNode {
