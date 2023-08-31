@@ -7,5 +7,6 @@ export enum INLINES {
   ASSET_HYPERLINK = 'asset-hyperlink',
   // RESOURCE_HYPERLINK = 'resource-hyperlink',
   EMBEDDED_ENTRY = 'embedded-entry-inline',
+  MENTION = 'mention'
   // EMBEDDED_RESOURCE = 'embedded-resource-inline',
 }

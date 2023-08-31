@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Block, BLOCKS, Document, Inline, INLINES, MARKS, Text } from '@contentful/rich-text-types';
 import { nodeToReactComponent } from './util/nodeListToReactComponents';
+import Search from './components/Search';
 
 const defaultNodeRenderers: RenderNode = {
   [BLOCKS.DOCUMENT]: (node, children) => children,
@@ -30,6 +31,7 @@ const defaultNodeRenderers: RenderNode = {
   [INLINES.ENTRY_HYPERLINK]: (node) => defaultInline(INLINES.ENTRY_HYPERLINK, node as Inline),
   [INLINES.EMBEDDED_ENTRY]: (node) => defaultInline(INLINES.EMBEDDED_ENTRY, node as Inline),
   [INLINES.HYPERLINK]: (node, children) => <a href={node.data.uri}>{children}</a>,
+  [INLINES.MENTION]: (node, children) => <Search node={node} children={children} />
 };
 
 const defaultMarkRenderers: RenderMark = {
